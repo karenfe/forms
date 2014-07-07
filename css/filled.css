@@ -1,0 +1,4 @@
+#main_form input,#main_form textarea{outline:none;box-shadow:none !important;border:none;border-bottom:2px solid black;border-radius: 0;background-color: transparent;color:black;font-weight:bold;font-family:"monospace";}
+#main_form input:hover, #main_form textarea:hover{outline:none;box-shadow:none !important;}
+
+#main_form textarea{border:2px solid black;}

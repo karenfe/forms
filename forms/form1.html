@@ -1,3 +1,182 @@
+<<<<<<< HEAD
+<div class="container-fluid" id="main">
+
+
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h2>2014/2015 Getting To Know Your Child</h2>
+			<h4>Please fill out for the classroom teacher</h4>
+		</div>
+	</div>
+
+
+
+	<div class="row disclaimer">
+		<div class="col-sm-10 col-sm-offset-1">
+			<b>
+			PARENTS: Even if your child has been at KASP for many years we request that you fill this out completely each year. We use any NEW information to get to know your child better and to help set developmental goals for the year.</b>
+		</div>
+	</div>
+
+	<hr/>
+
+	<form role="form" id="main_form" action="/filled/" method="POST">
+		<input type="hidden" name="file" value="<?php echo basename(__FILE__); ?>"/>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label for="full_legal_name" class="col-sm-3 control-label">Child’s Full Legal Name:</label>
+				<div class="col-sm-9">
+					<input type="text" data-bv-notempty class="form-control" name="full_legal_name" placeholder="">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="birth_month" class="col-sm-3 control-label">Date of Birth:</label>
+				<label for="birth_month" class="col-sm-1 control-label">Month</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" name="birth_month" placeholder="">
+				</div>
+				<label for="birth_day" class="col-sm-1 control-label">Day</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" name="birth_day" placeholder="">
+				</div>
+				<label for="birth_year" class="col-sm-1 control-label">Year</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" name="birth_year" placeholder="">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nickname" class="col-sm-3 control-label">Nickname</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="nickname" placeholder="">
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="form-group text-left">
+			<label class="col-sm-12 control-label">Please list all <u>adults</u> and <u>children</u> living in the home:</label>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label col-sm-offset-3">Name</label>
+			<label class="col-sm-3 control-label">Relationship</label>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-3 col-sm-offset-3">
+				<input type="text" class="form-control" name="occupants_1" placeholder="">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="occupants_relationship_1" placeholder="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-3 col-sm-offset-3">
+				<input type="text" class="form-control" name="occupants_2" placeholder="">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="occupants_relationship_2" placeholder="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-3 col-sm-offset-3">
+				<input type="text" class="form-control" name="occupants_3" placeholder="">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="occupants_relationship_3" placeholder="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-3 col-sm-offset-3">
+				<input type="text" class="form-control" name="occupants_4" placeholder="">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="occupants_relationship_4" placeholder="">
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="form-group text-left">
+			<label class="col-sm-12 control-label">To help us better meet the needs of your family you might want to share the following: </label>
+		</div>
+
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label for="ethnicity" class="col-sm-3 control-label">Your ethnicity:</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" name="ethnicity" placeholder="Optional">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="religion" class="col-sm-3 control-label">Your religion:</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" name="religion" placeholder="Optional">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="other_language" class="col-sm-3 control-label">Language other than English spoken in the home:</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" name="other_language" placeholder="">
+				</div>
+			</div>
+
+		</div>
+
+		<hr/>
+
+		<div class="form-group">
+			<label class="control-label">1. List any special needs concerning medications, allergies, health issues, food limitations, or fears:</label>
+			<textarea class="form-control" name="question_1"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="control-label">2. Describe any current or previous experiences that your child has had in group settings:</label>
+			<textarea class="form-control" name="question_2"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="control-label">3. Please write a brief description of what you hope your child will receive from KASP and why you chose this program:</label>
+			<textarea class="form-control" name="question_3"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="control-label">4. Tell us about your child - birthplace, places lived, playmates and how he/she gets along with others, what he/she likes to do, temperament, etc.:</label>
+			<textarea class="form-control" name="question_4"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="control-label">5. Has your child ever been screened for a language, physical, or developmental issue?</label>
+			<p>
+				<label class="radio-inline">
+					<input type="radio" name="question_5_yesno" value="Yes">Yes
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="question_5_yesno" value="No">No
+				</label>
+				<span class="ifyes">If yes, please explain:</span>
+			</p>
+			<textarea class="form-control" name="question_5"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="control-label">6. Do you have concerns with any area of your child’s development?</label>
+			<p>
+				<label class="radio-inline">
+					<input type="radio" name="question_6_yesno" value="Yes">Yes
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="question_6_yesno" value="No">No
+				</label>
+				<span class="ifyes">If yes, please explain:</span>
+			</p>
+			<textarea class="form-control" name="question_6"></textarea>
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+		</div>
+
+	</form>
+
+</div>
+=======
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -64,3 +243,4 @@
 		</script>
 	</body>
 </html>
+>>>>>>> e1690603c3ae914a031677996ee777b71ed64895
