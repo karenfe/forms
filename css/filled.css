@@ -1,4 +1,7 @@
-#main_form input,#main_form textarea{outline:none;box-shadow:none !important;border:none;border-bottom:2px solid black;border-radius: 0;background-color: transparent;color:black;font-weight:bold;font-family:"monospace";}
+#main_form input,#main_form textarea,#main_form select{outline:none;box-shadow:none !important;border:none;border-bottom:2px solid black;border-radius: 0;background-color: transparent;color:black;font-weight:bold;font-family:"monospace";}
+#main_form select{color:black;}
 #main_form input:hover, #main_form textarea:hover{outline:none;box-shadow:none !important;}
-
+input.big_checkmark{display:none;}
+label.big_checkmark{font-weight:bold;background:url("cross.png") left no-repeat;margin-left:20px;}
 #main_form textarea{border:2px solid black;}
+.ifyes{display:none;}

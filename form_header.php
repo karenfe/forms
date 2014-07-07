@@ -16,13 +16,24 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-		<link rel="stylesheet" href="css/bootstrapValidator.min.css">
-
 		<link rel="stylesheet" href="css/base.css">
+
 		<?php 
 			if(isset($filled) && $filled):
 		?>
+			<!-- This is a filled-out form -->
 			<link rel="stylesheet" href="css/filled.css">
+		<?php
+			else:
+		?>
+			<!-- This is a blank form -->
+			<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+			<script src="js/bootstrapValidator.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function() {
+					jQuery('#main_form').bootstrapValidator();
+				});
+			</script>
 		<?php 
 			endif;
 		?>
