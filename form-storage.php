@@ -12,7 +12,10 @@
 
 class FormStorage{
 
-	public static $plugin_name = 'form-storage';
+	public static $plugin_name = 'form-storage-and-email';
+
+	private $plugin_name_capitalized = "Forms and Storage";
+	
 
 	public function __construct(){
 
@@ -21,7 +24,7 @@ class FormStorage{
 	}
 
 	private function init(){
-		
+		add_action('admin_menu', array($this, 'prepare_menus'));
 	}
 
 	public static function install() {
@@ -35,6 +38,17 @@ class FormStorage{
 		add_rewrite_rule('filled/css/([^/]*)', $path.'css/$1', 'top');
 
 		flush_rewrite_rules(true);
+	}
+
+	public function prepare_menus(){
+		// Add to menu
+		$page = add_options_page( $this->plugin_name_capitalized, $this->plugin_name_capitalized, 'administrator', $this->plugin_name, array($this, 'render_admin_page'));
+		add_action("admin_print_scripts-$page", array($this, 'prepare_javascript_stylesheet'));
+	}
+
+	public function prepare_javascript_stylesheet(){
+		wp_enqueue_script($this->plugin_name_short.'-javascript', plugins_url('js/admin_main.js', __FILE__ ).'?r='.rand());
+		wp_enqueue_style($this->plugin_name_short.'-stylesheet', plugins_url('css/admin_style.css', __FILE__ ).'?r='.rand());
 	}
 	
 }

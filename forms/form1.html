@@ -28,19 +28,25 @@
 					<input type="text" data-bv-notempty class="form-control" name="full_legal_name" placeholder="">
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="birth_month" class="col-sm-3 control-label">Date of Birth:</label>
-				<label for="birth_month" class="col-sm-1 control-label">Month</label>
-				<div class="col-sm-2">
-					<input type="text" class="form-control" name="birth_month" placeholder="">
+			<div class="row">
+				<label class="col-sm-3 control-label">Date of Birth:</label>
+				<div class="form-group col-sm-3">
+					<label for="birth_month" class="col-sm-6 control-label">Month</label>
+					<div class="col-sm-6">
+						<input type="text" data-bv-notempty data-bv-digits class="form-control" name="birth_month" placeholder="">
+					</div>
 				</div>
-				<label for="birth_day" class="col-sm-1 control-label">Day</label>
-				<div class="col-sm-2">
-					<input type="text" class="form-control" name="birth_day" placeholder="">
+				<div class="form-group col-sm-3">
+					<label for="birth_day" class="col-sm-6 control-label">Day</label>
+					<div class="col-sm-6">
+						<input type="text" data-bv-notempty data-bv-digits class="form-control" name="birth_day" placeholder="">
+					</div>
 				</div>
-				<label for="birth_year" class="col-sm-1 control-label">Year</label>
-				<div class="col-sm-2">
-					<input type="text" class="form-control" name="birth_year" placeholder="">
+				<div class="form-group col-sm-3">
+					<label for="birth_year" class="col-sm-6 control-label">Year</label>
+					<div class="col-sm-6">
+						<input type="text" data-bv-notempty data-bv-digits class="form-control" name="birth_year" placeholder="">
+					</div>
 				</div>
 			</div>
 			<div class="form-group">
@@ -67,7 +73,7 @@
 				<input type="text" class="form-control" name="occupants_1" placeholder="">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" name="occupants_relationship_1" placeholder="">
+				<input type="text" class="form-control" name="occupants_relationship_1" placeholder="Relationship">
 			</div>
 		</div>
 		<div class="form-group row">
@@ -75,7 +81,7 @@
 				<input type="text" class="form-control" name="occupants_2" placeholder="">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" name="occupants_relationship_2" placeholder="">
+				<input type="text" class="form-control" name="occupants_relationship_2" placeholder="Relationship">
 			</div>
 		</div>
 		<div class="form-group row">
@@ -83,7 +89,7 @@
 				<input type="text" class="form-control" name="occupants_3" placeholder="">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" name="occupants_relationship_3" placeholder="">
+				<input type="text" class="form-control" name="occupants_relationship_3" placeholder="Relationship">
 			</div>
 		</div>
 		<div class="form-group row">
@@ -91,7 +97,7 @@
 				<input type="text" class="form-control" name="occupants_4" placeholder="">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" name="occupants_relationship_4" placeholder="">
+				<input type="text" class="form-control" name="occupants_relationship_4" placeholder="Relationship">
 			</div>
 		</div>
 
@@ -145,10 +151,10 @@
 			<label class="control-label">5. Has your child ever been screened for a language, physical, or developmental issue?</label>
 			<p>
 				<label class="radio-inline">
-					<input type="radio" name="question_5_yesno" value="Yes">Yes
+					<input type="radio" data-bv-notempty  name="question_5_yesno" value="Yes">Yes
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="question_5_yesno" value="No">No
+					<input type="radio" data-bv-notempty name="question_5_yesno" value="No">No
 				</label>
 				<span class="ifyes">If yes, please explain:</span>
 			</p>
@@ -158,42 +164,15 @@
 			<label class="control-label">6. Do you have concerns with any area of your child’s development?</label>
 			<p>
 				<label class="radio-inline">
-					<input type="radio" name="question_6_yesno" value="Yes">Yes
+					<input type="radio" data-bv-notempty name="question_6_yesno" value="Yes">Yes
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="question_6_yesno" value="No">No
+					<input type="radio" data-bv-notempty name="question_6_yesno" value="No">No
 				</label>
 				<span class="ifyes">If yes, please explain:</span>
 			</p>
 			<textarea class="form-control" name="question_6"></textarea>
 		</div>
-
-		<div class="checkbox">
-			<label>
-	    		<input type="checkbox" name="question_7[]" value="One">
-	    		One
-	  		</label>
-	  		<label>
-	    		<input type="checkbox" name="question_7[]" value="Two">
-	    		Two
-	  		</label>
-	  		<label>
-	    		<input type="checkbox" name="question_7[]" value="Three">
-	    		Three
-	  		</label>
-	  	</div>
-
-		<select name="question_8">
-			<option value="Apple">Apple</option>
-			<option value="Orange">Orange</option>
-			<option value="Pear">Pear</option>
-		</select>
-
-		<select name="question_9" multiple>
-			<option value="Oscar">Oscar</option>
-			<option value="Pedro">Pedro</option>
-			<option value="Juan">Juan</option>
-		</select>
 
 		<div class="text-center">
 			<button type="submit" class="btn btn-primary btn-lg">Submit</button>

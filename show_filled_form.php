@@ -54,7 +54,7 @@
 				continue;
 			}
 
-			echo "Setting the value to $value<br/>";
+			//echo "Setting the value to $value<br/>";
 			$element->value = $value;
 			continue;
 
@@ -81,7 +81,7 @@
 
 		$element = $html->find('textarea[name='.$key.']',0);
 		if($element != null){
-			echo "Setting the value to $value<br/>";
+			//echo "Setting the textarea value to $value<br/>";
 			$element->innertext = $value;
 			$element->readonly = true;
 			continue;
@@ -90,6 +90,18 @@
 		//$element->readonly = true;
 
 	}
+
+
+	// Remove buttons
+	$buttons = $html->find('input[type=submit]');
+	foreach($buttons as $button){
+		$button->outertext='';
+	}
+	$buttons = $html->find('button');
+	foreach($buttons as $button){
+		$button->outertext='';
+	}
+
 
 	echo $header;
 	echo $html->save();
