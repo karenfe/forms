@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/form_base.css">
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@
 			<script src="js/bootstrapValidator.min.js"></script>
 			<script type="text/javascript">
 				jQuery(document).ready(function() {
-					jQuery('#main_form').bootstrapValidator();
+					jQuery('#main_form form').bootstrapValidator();
 				});
 			</script>
 		<?php 

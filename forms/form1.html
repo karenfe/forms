@@ -1,4 +1,4 @@
-<div class="container-fluid" id="main">
+<div class="container-fluid" id="main_form">
 
 
 	<div class="row">
@@ -19,7 +19,7 @@
 
 	<hr/>
 
-	<form role="form" id="main_form" action="/filled/" method="POST">
+	<form role="form" action="submit/" method="POST">
 		<input type="hidden" name="file" value="<?php echo basename(__FILE__); ?>"/>
 		<div class="form-horizontal">
 			<div class="form-group">
@@ -172,6 +172,17 @@
 				<span class="ifyes">If yes, please explain:</span>
 			</p>
 			<textarea class="form-control" name="question_6"></textarea>
+		</div>
+
+		<hr/>
+
+		<div class="form-group captcha">
+			<label class="control-label">For security reasons, please type the following text:</label>
+			<?php
+				require_once('lib/recaptchalib.php');
+				$publickey = "6Lf3hvYSAAAAABJMcBRwVTKioQfb5ZaNtu3up4KH"; // you got this from the signup page
+				echo recaptcha_get_html($publickey);
+        	?>
 		</div>
 
 		<div class="text-center">
