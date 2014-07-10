@@ -12,22 +12,14 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700' rel='stylesheet' type='text/css'>
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/form_base.css">
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 		<?php 
-			if(isset($filled) && $filled):
-		?>
-			<!-- This is a filled-out form -->
-			<link rel="stylesheet" href="css/filled.css">
-		<?php
-			else:
+			if(!isset($filled)):
 		?>
 			<!-- This is a blank form -->
 			<link rel="stylesheet" href="css/bootstrapValidator.min.css">

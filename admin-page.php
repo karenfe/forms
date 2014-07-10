@@ -67,7 +67,7 @@
 				<td class="column-columnname">
 					<?php echo $form->file; ?>
 					<div class="row-actions">
-						<span><a target="_blank" href="<?php echo plugins_url( 'show-filled-form.php', __FILE__)."?show=".$form->id;?>">Show Form</a> |</span>
+						<span><a target="_blank" href="<?php echo plugins_url( 'show-filled-form.php', __FILE__)."?show=".$form->link;?>">Show Form</a> |</span>
 						<span class="trash"><a href="<?php echo $delete_url; ?>">Delete</a></span>
 					</div>
 				</td>

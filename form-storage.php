@@ -46,6 +46,7 @@ class FormStorage{
 		if ( ! current_user_can( 'manage_options' ) && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 			wp_die( __( 'You are not allowed to access this part of the site' ) );
 		}
+
 		if($_GET['action'] == "delete"){
 			$deleted = TRUE;
 			check_admin_referer( 'delete_'.$_GET['id'] );
@@ -53,6 +54,8 @@ class FormStorage{
 			$sql = $wpdb->prepare( "DELETE FROM `".$wpdb->prefix . FormStorage::$table_name."` WHERE id = %d", $_GET['id'] );
 			if($wpdb->query($sql)){
 				$error = FALSE;
+			}else{
+				$error = "Error deleting form submission.";
 			}
 		}
 	}
@@ -99,11 +102,15 @@ class FormStorage{
 		
 		$path = strstr(WP_PLUGIN_DIR,"wp-content")."/".FormStorage::$plugin_name_short."/";
 		
-		add_rewrite_rule('form/submit[/]?$', $path.'submit-form.php?file=$1', 'top');
-
+		add_rewrite_rule('form/submit[/]?$', $path.'submit-form.php', 'top');
+		
 		add_rewrite_rule('form/js/([^/]*)', $path.'js/$1', 'top');
 		add_rewrite_rule('form/css/([^/]*)', $path.'css/$1', 'top');
 		add_rewrite_rule('form/([^/]*)$', $path.'show-form.php?file=$1', 'top');
+		
+		add_rewrite_rule('forms/js/([^/]*)', $path.'js/$1', 'top');
+		add_rewrite_rule('forms/css/([^/]*)', $path.'css/$1', 'top');
+		add_rewrite_rule('forms/([^/]*)$', $path.'show-filled-form.php?show=$1', 'top');
 
 		flush_rewrite_rules(true);
 
@@ -117,6 +124,7 @@ class FormStorage{
 			id mediumint(9) NOT NULL AUTO_INCREMENT, 
 			time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
 			file text, 
+			link text,
 			data text, 
 			UNIQUE KEY id (id)
 		) DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;";

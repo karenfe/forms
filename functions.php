@@ -138,8 +138,6 @@ function sanitizeFormFields($form_html, $array){
 			$key .= "[]";
 		}
 
-		$array[$key] = mysql_real_escape_string($value);
-
 		$element = $html->find('input[name='.$key.']',0);
 		if($element != null){
 			continue;
@@ -210,4 +208,4 @@ function get_include_contents($filename) {
 }
 
 
-?> 
+?>
